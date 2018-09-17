@@ -1,0 +1,16 @@
+{
+  "presets": [
+    [ "env", {
+      "targets": {
+        "chrome": 25
+      },
+      "modules": false,
+      "useBuiltIns": true,
+      "debug": true
+      }
+    ],
+    "es2015"
+  ],
+  "plugins": ["transform-runtime"],
+  "comments": false
+}

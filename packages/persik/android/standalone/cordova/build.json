@@ -1,0 +1,18 @@
+{
+    "android": {
+        "debug": {
+            "keystore": "persik.keystore",
+            "storePassword": "persik",
+            "alias": "persik",
+            "password" : "persik",
+            "keystoreType": ""
+        },
+        "release": {
+            "keystore": "persik.keystore",
+            "storePassword": "persik",
+            "alias": "persik",
+            "password" : "persik",
+            "keystoreType": ""
+        }
+    }
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget>
+  <ThumbIcon>icon_106x87.png</ThumbIcon>
+  <BigThumbIcon>icon_115x95.png</BigThumbIcon>
+  <BigListIcon>icon_95x78.png</BigListIcon>
+  <ListIcon>icon_85x70.png</ListIcon>
+  <ThumbIconHD>icon_158x130.png</ThumbIconHD>
+  <BigThumbIconHD>icon_173x143.png</BigThumbIconHD>
+  <ListIconHD>icon_128x105.png</ListIconHD>
+  <BigListIconHD>icon_143x118.png</BigListIconHD>
+  <category>Videos</category>
+  <autoUpdate>y</autoUpdate>
+  <cpname>Persik.TV 3</cpname>
+  <login>n</login>
+  <ver>0.101</ver>
+  <fullwidget>y</fullwidget>
+  <srcctl>y</srcctl>
+  <dcont>y</dcont>
+  <childlock>y</childlock>
+  <network>y</network>
+  <mouse>y</mouse>
+  <width>1280</width>
+  <height>720</height>
+  <author>
+    <name>Personiga Interaktiva Komunikacija SIA</name>
+    <email>info@persik.tv</email>
+    <link>http://persik.tv/</link>
+    <organization>Personiga Interaktiva Komunikacija SIA</organization>
+  </author>
+  <widgetname>Persik.TV 3.0</widgetname>
+  <description>Проект "Persik.TV" — это цифровое интерактивное телевидение. Только популярные телеканалы, большая библиотека фильмов, архив передач, единая подписка для всех устройств.</description>
+  <multiscreen>y</multiscreen>
+  <MLS2>y</MLS2>
+</widget>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Creator: CorelDRAW X6 -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xml:space="preserve"
+   width="738.89581"
+   height="396.03461"
+   version="1.1"
+   style="clip-rule:evenodd;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
+   viewBox="0 0 913.18685 489.04273"
+   id="svg2"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="logo-persik-by.svg"><metadata
+     id="metadata98"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1284"
+     inkscape:window-height="739"
+     id="namedview96"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.5959596"
+     inkscape:cx="320.65931"
+     inkscape:cy="274.46584"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" /><defs
+     id="defs4"><style
+       type="text/css"
+       id="style62"><![CDATA[
+    @font-face { font-family:"Arial";src:url("#FontID1") format(svg)}
+    @font-face { font-family:"Roboto Condensed";src:url("#FontID0") format(svg)}
+    .fil1 {fill:#009846}
+    .fil0 {fill:#E31E24}
+    .fil2 {fill:#FEFEFE}
+    .fnt0 {font-weight:normal;font-size:148.547px;font-family:'Roboto Condensed'}
+   ]]></style></defs><g
+     id="Слой_x0020_1"
+     transform="translate(4.4351963,-0.20490644)"><metadata
+       id="CorelCorpID_0Corel-Layer" /><polygon
+       class="fil0"
+       points="183,94 183,159 253,90 253,25 "
+       id="polygon66"
+       style="fill:#e31e24" /><polygon
+       class="fil0"
+       points="168,94 168,159 99,90 99,25 "
+       id="polygon68"
+       style="fill:#e31e24" /><polygon
+       class="fil0"
+       points="261,99 326,99 257,168 193,168 "
+       id="polygon70"
+       style="fill:#e31e24" /><polygon
+       class="fil0"
+       points="90,99 25,99 94,168 159,168 "
+       id="polygon72"
+       style="fill:#e31e24" /><rect
+       class="fil1"
+       transform="matrix(0.707107,0.707107,-0.707107,0.707107,175.517,5.79593e-4)"
+       width="37.435699"
+       height="37.435699"
+       id="rect74"
+       x="0"
+       y="0"
+       style="fill:#009846" /><polygon
+       class="fil1"
+       points="323,145 349,171 296,171 "
+       id="polygon76"
+       style="fill:#009846" /><polygon
+       class="fil1"
+       points="26,145 53,171 0,171 "
+       id="polygon78"
+       style="fill:#009846" /><polygon
+       class="fil0"
+       points="184,395 184,331 254,400 254,464 "
+       id="polygon80"
+       style="fill:#e31e24" /><polygon
+       class="fil0"
+       points="170,395 170,331 100,400 100,464 "
+       id="polygon82"
+       style="fill:#e31e24" /><polygon
+       class="fil0"
+       points="262,391 327,391 258,321 194,321 "
+       id="polygon84"
+       style="fill:#e31e24" /><polygon
+       class="fil0"
+       points="91,391 26,391 95,321 160,321 "
+       id="polygon86"
+       style="fill:#e31e24" /><rect
+       class="fil1"
+       transform="matrix(0.707107,-0.707107,-0.707107,-0.707107,176.674,489.452)"
+       width="37.435699"
+       height="37.435699"
+       id="rect88"
+       x="0"
+       y="0"
+       style="fill:#009846" /><polygon
+       class="fil1"
+       points="324,345 350,318 298,318 "
+       id="polygon90"
+       style="fill:#009846" /><polygon
+       class="fil1"
+       points="28,345 54,318 1,318 "
+       id="polygon92"
+       style="fill:#009846" /><text
+       x="-4"
+       y="298"
+       class="fil2 fnt0"
+       id="text94"
+       style="font-weight:normal;font-size:148.54699707px;font-family:'Roboto Condensed';fill:#fefefe">TV BY Persik</text>
+</g></svg>

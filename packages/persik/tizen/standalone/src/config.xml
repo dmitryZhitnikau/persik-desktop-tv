@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/persiktv" version="1.0.0" viewmodes="maximized">
+    <access origin="*" subdomains="true"></access>
+    <tizen:application id="PW4JhyGKrO.persiktv" package="PW4JhyGKrO" required_version="2.3"/>
+    <author href="http://persik.tv" email="info@persik.tv">Personiga Interaktiva Komunikacija SIA</author>
+    <content src="index.html"/>
+    <description xml:lang="ru-ru">Проект &quot;Persik.TV&quot; — это цифровое интерактивное телевидение. Только популярные телеканалы, большая библиотека фильмов, архив передач, единая подписка для всех устройств.</description>
+    <feature name="http://tizen.org/feature/screen.size.all"/>
+    <icon src="icon.png" height="423" width="512"/>
+    <name xml:lang="ru-ru">Persik.TV</name>
+    <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
+    <tizen:privilege name="http://tizen.org/privilege/download"/>
+    <tizen:privilege name="http://tizen.org/privilege/filesystem.read"/>
+    <tizen:privilege name="http://tizen.org/privilege/notification"/>
+    <tizen:privilege name="http://tizen.org/privilege/tv.audio"/>
+    <tizen:privilege name="http://tizen.org/privilege/tv.inputdevice"/>
+    <tizen:privilege name="http://developer.samsung.com/privilege/network.public"/>
+    <tizen:privilege name="http://tizen.org/privilege/power"/>
+    <tizen:privilege name="http://developer.samsung.com/privilege/productinfo"/>
+    <tizen:privilege name="http://tizen.org/privilege/system"/>
+    <tizen:privilege name="http://tizen.org/feature/network.ethernet"/>
+    <tizen:privilege name="http://tizen.org/feature/network.wifi"/>
+    <tizen:privilege name="http://tizen.org/privilege/unlimitedstorage"/>
+    <tizen:profile name="tv"/>
+    <tizen:setting screen-orientation="landscape" context-menu="disable" background-support="disable" encryption="disable" install-location="auto" hwkey-event="enable"/>
+</widget>

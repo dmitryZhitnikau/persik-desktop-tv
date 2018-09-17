@@ -1,0 +1,4 @@
+build/*.js
+config/*.js
+src/**/*.js
+src/persik/platform/modules/webos/webOS.es6

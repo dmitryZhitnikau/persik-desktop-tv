@@ -1,0 +1,15 @@
+{
+    "id": "tv.persik.webos",
+    "version": "2.0.0",
+    "iconColor": "#000000",
+    "vendor": "Personiga Interaktiva Komunikacija SIA",
+    "type": "web",
+    "main": "index.html",
+    "title": "Persik.TV",
+    "icon": "80.png",
+    "largeIcon": "130.png",
+    "splashBackground": "1920.png",
+    "resolution": "1280x720",
+    "appDescription": "\"Persik.TV\" — это цифровое интерактивное телевидение. Только популярные телеканалы, большая библиотека фильмов, архив передач, единая подписка для всех устройств.",
+    "disableBackHistoryAPI": true
+}
