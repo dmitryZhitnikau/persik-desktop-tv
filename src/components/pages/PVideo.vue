@@ -7,7 +7,7 @@
         <div class="detail-video__header-cover" v-bind:style="{ backgroundImage: 'url(' + resizeW(cover, 512) + ')'}"></div>
         <div class="detail-video__header-details">
           <div class="detail-video__header-details_genres">
-            <span v-for="(genre, index) in video.genres" :key="index">{{ genre | capitalize }}</span>
+            <span v-for="(genre, index) in video.genres" :key="index">{{ clearGenre(genre) | capitalize }}</span>
           </div>
           <h1 class="detail-video__header-details_big">{{ video.name }}</h1>
           <div class="detail-video__header-details_midi">{{ video.international_name }}</div>
@@ -247,6 +247,11 @@
       },
     },
     methods: {
+      clearGenre(genre) {
+        const genreSplit = genre.split(') ');
+        if (genreSplit[1]) return genreSplit[1];
+        return genre;
+      },
       showActorInfo(person) {
         this.$router.push({
           name: 'Main',
