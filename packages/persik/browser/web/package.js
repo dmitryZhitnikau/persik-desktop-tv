@@ -22,7 +22,7 @@ async function clean() {
 
 async function copy() {
   process.stderr.write('\nCopy built files from dist ... ');
-  await fse.copy(__dirname.replace('/tv/packages/', '/tv/dist/'), __dirname + '/src');
+  await fse.copy(__dirname.replace('/packages/', '/dist/'), __dirname + '/src');
   process.stderr.write('OK');
 }
 
