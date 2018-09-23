@@ -287,7 +287,9 @@
           if (this.type === 'video') {
             streamData = await this.$backend.stream.getVideo(this.id);
           } else if (this.type === 'tvshow') {
-            streamData = await this.$backend.stream.getTvshow(this.id);
+            console.log(this.id);
+            streamData = await this.$backend.stream.getTvshow(+this.id);
+            console.log(streamData);
           }
           const streamUrl = streamData.stream_url;
           const hls = new Hls();

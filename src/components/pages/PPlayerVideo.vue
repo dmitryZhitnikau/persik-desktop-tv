@@ -256,9 +256,9 @@
               this.startPlayTime = moment().valueOf();
               this.video.play(url);
               Metric.getInstance().event(this.type, 'play', `${this.name} (#${this.id})`);
-              const videoTag = document.getElementById('player_window');
+              /* const videoTag = document.getElementById('player_window');
               const containerTag = document.getElementsByClassName('app-content')[0];
-              console.log('tags: ', videoTag, containerTag);
+               console.log('tags: ', videoTag, containerTag);
               // eslint-disable-next-line
               ya.videoAd.loadModule('AdSDK').then((module) => {
                 module.initForVideoNode(
@@ -275,7 +275,7 @@
                     console.error('playerError: ', error.message);
                   },
                 );
-              });
+              }); */
             } else {
               this.showAllBars();
               this.$nm.showError(this.$lang.messages.messages.server_ask_error, 5000);
