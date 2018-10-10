@@ -347,7 +347,7 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 7rem;
+    width: 9rem;
     height: 1rem;
     -webkit-box-align: center;
         -ms-flex-align: center;

@@ -31,7 +31,7 @@ const router = new Router({
     {
       path: '/player-live/:channelId',
       name: 'PlayerLive',
-      props: true,
+      props: (route) => (Object.assign({}, route.params, { query: route.query })),
       component: PPlayerLive,
     },
     {

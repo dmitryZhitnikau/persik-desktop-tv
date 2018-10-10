@@ -168,6 +168,7 @@
       this.series = [];
       this.seasonSelect = 0;
       this.updateVideoInfo();
+      console.log(this.id);
     },
     activated() {
       Metric.getInstance().screenView('video');
@@ -248,9 +249,11 @@
     },
     methods: {
       clearGenre(genre) {
-        const genreSplit = genre.split(') ');
-        if (genreSplit[1]) return genreSplit[1];
-        return genre;
+        if (genre) {
+          const genreSplit = genre.split(') ');
+          if (genreSplit[1]) return genreSplit[1];
+          return genre;
+        } return null;
       },
       showActorInfo(person) {
         this.$router.push({
