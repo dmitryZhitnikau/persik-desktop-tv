@@ -14495,7 +14495,7 @@ exports.default = {
     getInfo: function getInfo() {
       this.getDeviceInfo();
       this.getUuid();
-      var env = __webpack_require__.i({"NODE_ENV":"production","BUILD_DATE":"201810121057","BUILD_NUMBER":'N/A'});
+      var env = __webpack_require__.i({"NODE_ENV":"production","BUILD_DATE":"201810121627","BUILD_NUMBER":'N/A'});
       var buildNumber = env.BUILD_NUMBER ? '#' + env.BUILD_NUMBER : 'N/A';
       this.info.build = buildNumber + ' (' + env.BUILD_DATE + ')';
       this.info.resolution = this.device.display.width + 'x' + this.device.display.height;
@@ -21207,7 +21207,7 @@ exports.default = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.de
         case 9:
           console.log('Backend', backend.code, 'inited');
 
-          env = __webpack_require__.i({"NODE_ENV":"production","BUILD_DATE":"201810121057","BUILD_NUMBER":'N/A'});
+          env = __webpack_require__.i({"NODE_ENV":"production","BUILD_DATE":"201810121627","BUILD_NUMBER":'N/A'});
           appVersion = env.BUILD_NUMBER ? '#' + env.BUILD_NUMBER + ' (' + env.BUILD_DATE + ')' : 'N/A';
           metric = _Metric2.default.getInstance();
 
@@ -27164,7 +27164,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     },
     on: {
       "click": function($event) {
-        _vm.bannerRedirect('content', 'tvshow', '1031320181008131510800')
+        _vm.bannerRedirect('content', 'tvshow', '1031320181012081510800')
       }
     }
   }), _vm._v(" "), _c('div', {
@@ -27173,19 +27173,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "banner-slide__nav-btn banner-slide__nav-btn_show",
     on: {
       "click": function($event) {
-        _vm.bannerRedirect('content', 'tvshow', '1031320181008131510800')
+        _vm.bannerRedirect('content', 'tvshow', '1031320181012081510800')
       }
     }
   }, [_vm._v("Смотреть")]), _vm._v(" "), (_vm.authorized) ? _c('div', {
     staticClass: "banner-slide__nav-btn banner-slide__nav-btn_favorite",
     on: {
       "click": function($event) {
-        _vm.bannerToFavorite('1031320181008131510800', 'tvshow')
+        _vm.bannerToFavorite('1031320181012081510800', 'tvshow')
       }
     }
   }, [_c('i', {
     staticClass: "fa fa-bookmark",
-    style: (_vm.isFavorite('1031320181008131510800', 'tvshow') ? 'color: #e05f20' : '')
+    style: (_vm.isFavorite('1031320181012081510800', 'tvshow') ? 'color: #e05f20' : '')
   }), _vm._v("\n              Добавить в избранное\n            ")]) : _vm._e()])]), _vm._v(" "), _c('div', {
     staticClass: "banner-slide"
   }, [_c('img', {

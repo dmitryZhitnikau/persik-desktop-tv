@@ -15,11 +15,11 @@
           </div>
 
           <div class="banner-slide">
-            <img class="banner-slide__img" src="../../assets/gregor.jpg" alt="" v-on:click="bannerRedirect('content', 'tvshow', '1031320181008131510800')">
+            <img class="banner-slide__img" src="../../assets/gregor.jpg" alt="" v-on:click="bannerRedirect('content', 'tvshow', '1031320181012081510800')">
             <div class="banner-slide__nav">
-              <div class="banner-slide__nav-btn banner-slide__nav-btn_show" v-on:click="bannerRedirect('content', 'tvshow', '1031320181008131510800')">Смотреть</div>
-              <div class="banner-slide__nav-btn banner-slide__nav-btn_favorite" v-if="authorized" v-on:click="bannerToFavorite('1031320181008131510800', 'tvshow')">
-                <i class="fa fa-bookmark" v-bind:style="isFavorite('1031320181008131510800', 'tvshow') ? 'color: #e05f20' : ''"></i>
+              <div class="banner-slide__nav-btn banner-slide__nav-btn_show" v-on:click="bannerRedirect('content', 'tvshow', '1031320181012081510800')">Смотреть</div>
+              <div class="banner-slide__nav-btn banner-slide__nav-btn_favorite" v-if="authorized" v-on:click="bannerToFavorite('1031320181012081510800', 'tvshow')">
+                <i class="fa fa-bookmark" v-bind:style="isFavorite('1031320181012081510800', 'tvshow') ? 'color: #e05f20' : ''"></i>
                 Добавить в избранное
               </div>
             </div>
