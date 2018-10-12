@@ -6,6 +6,14 @@
     <slick class="p-home__block-banner"
         ref="slick"
         :options="bannerSlickOptions">
+
+          <div class="banner-slide">
+            <img class="banner-slide__img" src="../../assets/sale.jpg" alt="" v-on:click="bannerRedirect('advertisement', '', 'https://persik.by/info/tariffs?utm_source=newpersik#godnext')">
+            <div class="banner-slide__nav">
+              <div class="banner-slide__nav-btn banner-slide__nav-btn_show" v-on:click="bannerRedirect('advertisement', '', 'https://persik.by/info/tariffs?utm_source=newpersik#godnext')">Подробнее</div>
+            </div>
+          </div>
+
           <div class="banner-slide">
             <img class="banner-slide__img" src="../../assets/gregor.jpg" alt="" v-on:click="bannerRedirect('content', 'tvshow', '1031320181008131510800')">
             <div class="banner-slide__nav">
@@ -201,17 +209,25 @@
         return this.checkFavorite(id, content);
       },
       bannerRedirect(content, type, id) {
-        if (content === 'content') {
-          this.$router.push({
-            name: 'Main',
-            params: { page: 'video' },
-            query: { type, id, utm_source: 'newpersik' }, // app-desktop, newpersik
-          });
-        } else {
-          this.$router.push({
-            name: 'PlayerLive',
-            params: { load: true, channelId: id },
-          });
+        switch (content) {
+          case 'content':
+            this.$router.push({
+              name: 'Main',
+              params: { page: 'video' },
+              query: { type, id, utm_source: 'newpersik' }, // app-desktop, newpersik
+            });
+            break;
+          case 'channel':
+            this.$router.push({
+              name: 'PlayerLive',
+              params: { load: true, channelId: id },
+            });
+            break;
+          case 'advertisement':
+            window.location = id;
+            break;
+          default:
+            break;
         }
       },
       bannerToFavorite(id, content) {

@@ -322,7 +322,7 @@
           display: block !important;
           position: absolute;
           top: 0;
-          width: 6.5rem;
+          width: 6rem;
           height: 100%;
           z-index: 2;
           border: none;
