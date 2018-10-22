@@ -15,9 +15,9 @@
           </div> -->
 
           <div class="banner-slide" v-for="banner in banners">
-            <img class="banner-slide__img" :src="banner.img_url_desktop" alt="" v-on:click="bannerRedirect(banner.element_type, banner.element_id, banner.url, banner.utm)">
+            <img class="banner-slide__img" :src="banner.img_url_desktop" alt="" v-on:click="bannerRedirect(banner.element_type, banner.element_id, banner.url)">
             <div class="banner-slide__nav">
-              <div class="banner-slide__nav-btn banner-slide__nav-btn_show" v-on:click="bannerRedirect(banner.element_type, banner.element_id, banner.url, banner.utm)">{{ getButtonName(banner.element_type) }}</div>
+              <div class="banner-slide__nav-btn banner-slide__nav-btn_show" v-on:click="bannerRedirect(banner.element_type, banner.element_id, banner.url)">{{ getButtonName(banner.element_type) }}</div>
               <div class="banner-slide__nav-btn banner-slide__nav-btn_favorite" v-if="authorized && banner.element_type != 'site'" v-on:click="bannerToFavorite(banner.element_type, banner.element_id)">
                 <i class="fa fa-bookmark" v-bind:style="isFavorite(banner.element_type, banner.element_id) ? 'color: #e05f20' : ''"></i>
                 Добавить в избранное
@@ -211,13 +211,13 @@
       isFavorite(id, content) {
         return this.checkFavorite(id, content);
       },
-      bannerRedirect(type, id, url, utm) {
+      bannerRedirect(type, id, url) {
         switch (type) {
           case 'video':
             this.$router.push({
               name: 'Main',
               params: { page: 'video' },
-              query: { type, id, utm_source: utm }, // app-desktop, newpersik
+              query: { type, id, utm_source: 'newpersik' }, // app-desktop, newpersik
             });
             break;
           case 'channel':
@@ -227,7 +227,7 @@
             });
             break;
           case 'site':
-            window.location = url;
+            window.location = `${url}?utm_source=newpersik`;
             break;
           default:
             break;
