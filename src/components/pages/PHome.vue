@@ -7,14 +7,25 @@
         ref="slick"
         :options="bannerSlickOptions">
 
-          <div class="banner-slide">
+          <!-- <div class="banner-slide">
             <img class="banner-slide__img" src="../../assets/sale.jpg" alt="" v-on:click="bannerRedirect('advertisement', '', 'https://persik.by/info/tariffs?utm_source=newpersik#godnext')">
             <div class="banner-slide__nav">
               <div class="banner-slide__nav-btn banner-slide__nav-btn_show" v-on:click="bannerRedirect('advertisement', '', 'https://persik.by/info/tariffs?utm_source=newpersik#godnext')">Подробнее</div>
             </div>
+          </div> -->
+
+          <div class="banner-slide" v-for="banner in banners">
+            <img class="banner-slide__img" :src="banner.img_url_desktop" alt="" v-on:click="bannerRedirect(banner.element_type, banner.element_id, banner.url, banner.utm)">
+            <div class="banner-slide__nav">
+              <div class="banner-slide__nav-btn banner-slide__nav-btn_show" v-on:click="bannerRedirect(banner.element_type, banner.element_id, banner.url, banner.utm)">{{ getButtonName(banner.element_type) }}</div>
+              <div class="banner-slide__nav-btn banner-slide__nav-btn_favorite" v-if="authorized && banner.element_type != 'site'" v-on:click="bannerToFavorite(banner.element_type, banner.element_id)">
+                <i class="fa fa-bookmark" v-bind:style="isFavorite(banner.element_type, banner.element_id) ? 'color: #e05f20' : ''"></i>
+                Добавить в избранное
+              </div>
+            </div>
           </div>
 
-          <div class="banner-slide">
+          <!-- <div class="banner-slide">
             <img class="banner-slide__img" src="../../assets/red.jpg" alt="" v-on:click="bannerRedirect('content', 'video', 856842)">
             <div class="banner-slide__nav">
               <div class="banner-slide__nav-btn banner-slide__nav-btn_show" v-on:click="bannerRedirect('content', 'video', 856842)">Смотреть фильм</div>
@@ -112,7 +123,7 @@
                 Добавить в избранное
               </div>
             </div>
-          </div>
+          </div> -->
 
     </slick>
       
@@ -156,6 +167,7 @@
       return {
         channels: [],
         featured: [],
+        banners: [],
         showPlaceholder: true,
         lastUpdate: 0,
         bannerSlickOptions: {
@@ -183,11 +195,13 @@
         this.$store.commit('setSpecialChannels', this.channels);
       },
     },
-    activated() {
+    async activated() {
       Metric.getInstance().screenView('home');
       this.updateTimer = setInterval(this.lazyUpdate.bind(this), UPDATE_INTERVAL * 1000);
       this.lazyUpdate();
       this.$store.commit('setSpecialChannels', this.channels);
+      this.reInit();
+      this.banners = await this.$backend.content.getBanners();
       this.reInit();
     },
     deactivated() {
@@ -197,13 +211,13 @@
       isFavorite(id, content) {
         return this.checkFavorite(id, content);
       },
-      bannerRedirect(content, type, id) {
-        switch (content) {
-          case 'content':
+      bannerRedirect(type, id, url, utm) {
+        switch (type) {
+          case 'video':
             this.$router.push({
               name: 'Main',
               params: { page: 'video' },
-              query: { type, id, utm_source: 'newpersik' }, // app-desktop, newpersik
+              query: { type, id, utm_source: utm }, // app-desktop, newpersik
             });
             break;
           case 'channel':
@@ -212,8 +226,8 @@
               params: { load: true, channelId: id },
             });
             break;
-          case 'advertisement':
-            window.location = id;
+          case 'site':
+            window.location = url;
             break;
           default:
             break;
@@ -256,6 +270,13 @@
         const { channels } = await this.$backend.featured.getChannels(10);
         this.channels = channels.map((x) => x.channel_id);
         this.contentReady();
+      },
+      getButtonName(type) {
+        switch (type) {
+          case 'video': return 'Смотреть фильм';
+          case 'channel': return 'Смотреть канал';
+          default: return 'Подробнее';
+        }
       },
       contentReady() {
         this.showPlaceholder = false;

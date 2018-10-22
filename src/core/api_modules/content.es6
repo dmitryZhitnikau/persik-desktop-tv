@@ -60,4 +60,13 @@ export default {
     };
     return this.exec(method, version, module, action, params, true);
   },
+
+  getBanners() {
+    const version = 2;
+    const module = 'content';
+    const method = 'GET';
+    const action = 'banners2';
+    const params = {};
+    return this.exec(method, version, module, action, params, true);
+  },
 };

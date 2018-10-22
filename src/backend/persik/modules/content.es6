@@ -88,4 +88,8 @@ export default {
     return this.api.content.getPerson(...args);
   },
 
+  getBanners() {
+    return this.api.content.getBanners();
+  },
+
 };
