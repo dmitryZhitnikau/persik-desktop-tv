@@ -36,6 +36,7 @@
 </template>
 
 <script>
+  // import electronOpenLinkInBrowser from 'electron-open-link-in-browser';
   import moment from 'moment';
   import BChannels from '@/components/blocks/BChannels';
   import Slick from 'vue-slick';
@@ -96,21 +97,36 @@
       this.reInit();
       this.banners = await this.$backend.content.getBanners();
       this.reInit();
+      document.addEventListener('keydown', this.keyPressHandler);
     },
     deactivated() {
       clearInterval(this.updateTimer);
+      document.removeEventListener('keydown', this.keyPressHandler);
     },
     methods: {
+      keyPressHandler(event) {
+        switch (event.keyCode) {
+          case 37:
+            this.$refs.slick.prev();
+            break;
+          case 39:
+            this.$refs.slick.next();
+            break;
+          default: break;
+        }
+      },
       isFavorite(id, content) {
         return this.checkFavorite(id, content);
       },
       bannerRedirect(type, id, url) {
+        // eslint-disable-next-line
+        const {shell} = require('electron');
         switch (type) {
           case 'video':
             this.$router.push({
               name: 'Main',
               params: { page: 'video' },
-              query: { type, id, utm_source: 'newpersik' }, // app-desktop, newpersik
+              query: { type, id, utm_source: 'app-desktop' },
             });
             break;
           case 'channel':
@@ -120,7 +136,10 @@
             });
             break;
           case 'site':
-            window.location = `${url}?utm_source=newpersik`;
+            console.log('try window open');
+            window.open(`${url}?utm_source=app-desktop`, '_blank', 'nodeIntegration=no');
+            console.log('try electron official method');
+            shell.openExternal(`${url}?utm_source=app-desktop`);
             break;
           default:
             break;

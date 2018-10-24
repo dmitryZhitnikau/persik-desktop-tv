@@ -10,11 +10,11 @@
 
       <img class="header__logo" :src="$backend.logo" v-on:click="goToMain">
 
-      <div class="header__item header__item_menu">
-      <!--   <div class="header__item-button">Private</div>-->
+      <!-- <div class="header__item header__item_menu">
+   <div class="header__item-button">Private</div>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdj9WBRu9n_8txQLT0Lc1UqiqceJuSvLJ3-Luk8u26V_2WvQg/viewform" class="header__item-button header__item-button_active">Перейти на анкету</a>
-        <!--<div class="header__item-button">Corporate</div>-->
-      </div> 
+      <div class="header__item-button">Corporate</div>
+      </div> -->
 
       <div class="header__items">
 
@@ -49,12 +49,14 @@
           >
             <div class="sidebar__item-short">
               <div class="sidebar__item-short-icon">
-                <i class="fa" :class="item.icon"></i>
+                <i v-if="item.fa" class="fa" :class="item.fa"></i>
+                <img v-else :src="item.icon" alt="">
               </div>
             </div>
             <div class="sidebar__item-full">
               <div class="sidebar__item-full-icon">
-                <i class="fa" :class="item.icon"></i>
+                <i v-if="item.fa" class="fa" :class="item.fa"></i>
+                <img v-else :src="item.icon" alt="">
               </div>
               <span class="sidebar__item-full-name">{{ item.name }}</span>
             </div>
@@ -184,15 +186,21 @@
           {
             id: 1,
             items: [
-              { page: 'home', name: this.$lang.messages.main_menu.main, icon: 'fa-home', show: this.$backend.support.featured },
-              { page: 'tv', name: this.$lang.messages.main_menu.tv_review, icon: 'fa-th', show: true },
-              { page: 'live', name: this.$lang.messages.main_menu.tv_live, icon: 'fa-th-list', show: true },
-              { page: 'tv-column', name: this.$lang.messages.main_menu.tv_guide, icon: 'fa-columns', show: true },
-              { page: 'video-films', name: this.$lang.messages.main_menu.films, icon: 'fa-film', show: this.$backend.support.vod },
-              { page: 'video-cartoons', name: this.$lang.messages.main_menu.cartoons, icon: 'fa-film', show: this.$backend.support.vod },
-              { page: 'video-series', name: this.$lang.messages.main_menu.series, icon: 'fa-film', show: this.$backend.support.vod },
-              { page: 'video-shows', name: this.$lang.messages.main_menu.shows, icon: 'fa-film', show: this.$backend.support.vod },
-              { page: 'favorites', name: this.$lang.messages.main_menu.favorite, icon: 'fa-bookmark', show: this.$backend.support.auth && this.isLogged },
+              { page: 'home', name: this.$lang.messages.main_menu.main, fa: 'fa-home', show: this.$backend.support.featured },
+              { page: 'tv', name: this.$lang.messages.main_menu.tv_review, fa: 'fa-th', show: true },
+              // eslint-disable-next-line
+              { page: 'live', name: this.$lang.messages.main_menu.tv_live, icon: require('@/assets/icons/live.png'), show: true },
+              // eslint-disable-next-line
+              { page: 'tv-column', name: this.$lang.messages.main_menu.tv_guide, icon: require('@/assets/icons/tv.png'), show: true },
+              // eslint-disable-next-line
+              { page: 'video-films', name: this.$lang.messages.main_menu.films, icon: require('@/assets/icons/film.png'), show: this.$backend.support.vod },
+              // eslint-disable-next-line
+              { page: 'video-cartoons', name: this.$lang.messages.main_menu.cartoons, icon: require('@/assets/icons/mult.png'), show: this.$backend.support.vod },
+              // eslint-disable-next-line
+              { page: 'video-series', name: this.$lang.messages.main_menu.series, icon: require('@/assets/icons/serial.png'), show: this.$backend.support.vod },
+              // eslint-disable-next-line
+              { page: 'video-shows', name: this.$lang.messages.main_menu.shows, icon: require('@/assets/icons/pere.png'), show: this.$backend.support.vod },
+              { page: 'favorites', name: this.$lang.messages.main_menu.favorite, fa: 'fa-bookmark', show: this.$backend.support.auth && this.isLogged },
             ],
           },
         ];
@@ -698,7 +706,7 @@
         -webkit-transition-timing-function: ease-out;
                 transition-timing-function: ease-out;
         &-icon {
-          color: #666;
+          color: white;
           width: 3.4rem;
           text-align: center;
           display: -webkit-box;
@@ -711,6 +719,11 @@
           -webkit-box-pack: center;
               -ms-flex-pack: center;
                   justify-content: center;
+
+                  img {
+                    width: 1rem;
+                    height: 1rem;
+                  }
         }
       }
 
