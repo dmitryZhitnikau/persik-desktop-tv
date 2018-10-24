@@ -7,14 +7,7 @@
         ref="slick"
         :options="bannerSlickOptions">
 
-          <!-- <div class="banner-slide">
-            <img class="banner-slide__img" src="../../assets/sale.jpg" alt="" v-on:click="bannerRedirect('advertisement', '', 'https://persik.by/info/tariffs?utm_source=newpersik#godnext')">
-            <div class="banner-slide__nav">
-              <div class="banner-slide__nav-btn banner-slide__nav-btn_show" v-on:click="bannerRedirect('advertisement', '', 'https://persik.by/info/tariffs?utm_source=newpersik#godnext')">Подробнее</div>
-            </div>
-          </div> -->
-
-          <div class="banner-slide" v-for="banner in banners">
+          <div class="banner-slide" :key="banner.id" v-for="banner in banners">
             <img class="banner-slide__img" :src="banner.img_url_desktop" alt="" v-on:click="bannerRedirect(banner.element_type, banner.element_id, banner.url)">
             <div class="banner-slide__nav">
               <div class="banner-slide__nav-btn banner-slide__nav-btn_show" v-on:click="bannerRedirect(banner.element_type, banner.element_id, banner.url)">{{ getButtonName(banner.element_type) }}</div>
@@ -24,106 +17,6 @@
               </div>
             </div>
           </div>
-
-          <!-- <div class="banner-slide">
-            <img class="banner-slide__img" src="../../assets/red.jpg" alt="" v-on:click="bannerRedirect('content', 'video', 856842)">
-            <div class="banner-slide__nav">
-              <div class="banner-slide__nav-btn banner-slide__nav-btn_show" v-on:click="bannerRedirect('content', 'video', 856842)">Смотреть фильм</div>
-              <div class="banner-slide__nav-btn banner-slide__nav-btn_favorite" v-if="authorized" v-on:click="bannerToFavorite(856842, 'video')">
-                <i class="fa fa-bookmark" v-bind:style="isFavorite(856842, 'video') ? 'color: #e05f20' : ''"></i>
-                Добавить в избранное
-              </div>
-            </div>
-          </div>
-
-
-          <div class="banner-slide">
-            <img class="banner-slide__img" src="../../assets/dark.jpg" alt="" v-on:click="bannerRedirect('content', 'video', 856712)">
-            <div class="banner-slide__nav">
-              <div class="banner-slide__nav-btn banner-slide__nav-btn_show" v-on:click="bannerRedirect('content', 'video', 856712)">Смотреть фильм</div>
-              <div class="banner-slide__nav-btn banner-slide__nav-btn_favorite" v-if="authorized" v-on:click="bannerToFavorite(856712, 'video')">
-                <i class="fa fa-bookmark" v-bind:style="isFavorite(856712, 'video') ? 'color: #e05f20' : ''"></i>
-                Добавить в избранное
-              </div>
-            </div>
-          </div>
-
-          <div class="banner-slide">
-            <img class="banner-slide__img" src="../../assets/fitness.jpg" alt="" v-on:click="bannerRedirect('content', 'video', 856599)">
-            <div class="banner-slide__nav">
-              <div class="banner-slide__nav-btn banner-slide__nav-btn_show" v-on:click="bannerRedirect('content', 'video', 856599)">Смотреть фильм</div>
-              <div class="banner-slide__nav-btn banner-slide__nav-btn_favorite" v-if="authorized" v-on:click="bannerToFavorite(856599, 'video')">
-                <i class="fa fa-bookmark" v-bind:style="isFavorite(856599, 'video') ? 'color: #e05f20' : ''"></i>
-                Добавить в избранное
-              </div>
-            </div>
-          </div>
-
-          <div class="banner-slide">
-            <img class="banner-slide__img" src="../../assets/move-up.jpg" alt="" v-on:click="bannerRedirect('content', 'video', 856230)">
-            <div class="banner-slide__nav">
-              <div class="banner-slide__nav-btn banner-slide__nav-btn_show" v-on:click="bannerRedirect('content', 'video', 856230)">Смотреть фильм</div>
-              <div class="banner-slide__nav-btn banner-slide__nav-btn_favorite" v-if="authorized" v-on:click="bannerToFavorite(856230, 'video')">
-                <i class="fa fa-bookmark" v-bind:style="isFavorite(856230, 'video') ? 'color: #e05f20' : ''"></i>
-                Добавить в избранное
-              </div>
-            </div>
-          </div>
-
-          <div class="banner-slide">
-            <img class="banner-slide__img" src="../../assets/slim.jpg" alt="" v-on:click="bannerRedirect('content', 'video', 856418)">
-            <div class="banner-slide__nav">
-              <div class="banner-slide__nav-btn banner-slide__nav-btn_show" v-on:click="bannerRedirect('content', 'video', 856418)">Смотреть фильм</div>
-              <div class="banner-slide__nav-btn banner-slide__nav-btn_favorite" v-if="authorized" v-on:click="bannerToFavorite(856418, 'video')">
-                <i class="fa fa-bookmark" v-bind:style="isFavorite(856418, 'video') ? 'color: #e05f20' : ''"></i>
-                Добавить в избранное
-              </div>
-            </div>
-          </div>
-
-          <div class="banner-slide">
-            <img class="banner-slide__img" src="../../assets/burn.jpg" alt="" v-on:click="bannerRedirect('content', 'video', 856319)">
-            <div class="banner-slide__nav">
-              <div class="banner-slide__nav-btn banner-slide__nav-btn_show" v-on:click="bannerRedirect('content', 'video', 856319)">Смотреть фильм</div>
-              <div class="banner-slide__nav-btn banner-slide__nav-btn_favorite" v-if="authorized" v-on:click="bannerToFavorite(856319, 'video')">
-                <i class="fa fa-bookmark" v-bind:style="isFavorite(856319, 'video') ? 'color: #e05f20' : ''"></i>
-                Добавить в избранное
-              </div>
-            </div>
-          </div>
-
-          <div class="banner-slide">
-            <img class="banner-slide__img" src="../../assets/buy_me.jpg" alt="" v-on:click="bannerRedirect('content', 'tvshow', '2602018092519307500')">
-            <div class="banner-slide__nav">
-              <div class="banner-slide__nav-btn banner-slide__nav-btn_show" v-on:click="bannerRedirect('content', 'tvshow', '2602018092519307500')">Смотреть фильм</div>
-              <div class="banner-slide__nav-btn banner-slide__nav-btn_favorite" v-if="authorized" v-on:click="bannerToFavorite('2602018092519307500', 'tvshow')">
-                <i class="fa fa-bookmark" v-bind:style="isFavorite('2602018092519307500', 'tvshow') ? 'color: #e05f20' : ''"></i>
-                Добавить в избранное
-              </div>
-            </div>
-          </div>
-
-          <div class="banner-slide">
-            <img class="banner-slide__img" src="../../assets/trainer.jpg" alt="" v-on:click="bannerRedirect('content', 'video', 856201)">
-            <div class="banner-slide__nav">
-              <div class="banner-slide__nav-btn banner-slide__nav-btn_show" v-on:click="bannerRedirect('content', 'video', 856201)">Смотреть фильм</div>
-              <div class="banner-slide__nav-btn banner-slide__nav-btn_favorite" v-if="authorized" v-on:click="bannerToFavorite(856201, 'video')">
-                <i class="fa fa-bookmark" v-bind:style="isFavorite(856201, 'video') ? 'color: #e05f20' : ''"></i>
-                Добавить в избранное
-              </div>
-            </div>
-          </div>
-
-          <div class="banner-slide">
-            <img class="banner-slide__img" src="../../assets/men-films.jpg" alt="" v-on:click="bannerRedirect('channel', null, 10368)">
-            <div class="banner-slide__nav">
-              <div class="banner-slide__nav-btn banner-slide__nav-btn_show" v-on:click="bannerRedirect('channel', null, 10368)">Смотреть канал</div>
-              <div class="banner-slide__nav-btn banner-slide__nav-btn_favorite" v-if="authorized" v-on:click="bannerToFavorite(10368, 'channel')">
-                <i class="fa fa-bookmark" v-bind:style="isFavorite(10368, 'channel') ? 'color: #e05f20' : ''"></i>
-                Добавить в избранное
-              </div>
-            </div>
-          </div> -->
 
     </slick>
       
